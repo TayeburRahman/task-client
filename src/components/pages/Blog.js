@@ -16,7 +16,7 @@ const linkData = [
         sub_title: "Designers reduce waste making products recyclable. Even better endlessly reusable...",
         path: "/blog/1",
     },
-    
+
     {
         title: "Practice tips for effective networking",
         sub_title: "Ask open-ended questions that facilitate conversation. That networking is about building...",
@@ -37,7 +37,7 @@ const linkData = [
         sub_title: "The network is considered one of the most critical...",
         path: "/blog/1",
     },
-    
+
 ]
 
 function Blog() {
@@ -122,7 +122,7 @@ function Blog() {
 
                                 <p>
                                     Subiungit stipe in secunda, cum et non materno, est arma locis exhalat? O nec subiere curia  tamen Proteus rutilasque somni arbore, fecisse ille.
-                                    Creati candida vobis agros divum <span   className="font-700">Nebrophonosque</span> pater consonus nati Albanos <span className="font-700">alimenta</span> Phoebus et quid habenas surgere.
+                                    Creati candida vobis agros divum <span className="font-700">Nebrophonosque</span> pater consonus nati Albanos <span className="font-700">alimenta</span> Phoebus et quid habenas surgere.
                                     Potentem inania agam prius semper  <span className="font-700">consurgere</span>  liber multorumque dempto.
                                 </p>
                             </div>
@@ -131,36 +131,36 @@ function Blog() {
 
                     </div>
                     <div className='col-sm-12 col-md-4 col-lg-3 text-start  '>
-                       <div className='col-fixed'>
-                       <div className='profile_ '>
-                           <img className='profile_img' src={profile} />
-                           <h5>{user?.displayName}</h5>
-                           <p>{user?.email}</p>
-                           <div className='icon_box'>
-                              <a href=''><FacebookIcon/> </a>
-                              <a href=''><TwitterIcon/> </a>
-                              <a href=''><LinkedInIcon/> </a> 
-                           </div>
+                        <div className='col-fixed'>
+                            <div className='profile_ '>
+                                <img className='profile_img' src={profile} />
+                                <h5>{user?.displayName}</h5>
+                                <p>{user?.email}</p>
+                                <div className='icon_box'>
+                                    <a href=''><FacebookIcon /> </a>
+                                    <a href=''><TwitterIcon /> </a>
+                                    <a href=''><LinkedInIcon /> </a>
+                                </div>
+                            </div>
+                            <div className='catagory_'>
+                                {linkData?.map((data, index) => (
+                                    <Link className='blog_link' key={index} to={data.path}>
+                                        <h6>{data.title}</h6>
+                                        <div className='sub_box'>
+                                            <p>{data.sub_title}</p>
+                                            <ArrowForwardIosIcon />
+                                        </div>
+                                    </Link>
+                                ))}
+                            </div>
                         </div>
-                        <div className='catagory_'>
-                        {linkData?.map((data, index) => ( 
-                                <Link className='blog_link' key={index} to={data.path}>
-                                    <h6>{data.title}</h6>
-                                    <div className='sub_box'>
-                                        <p>{data.sub_title}</p>
-                                        <ArrowForwardIosIcon />
-                                    </div>
-                                </Link> 
-                        ))}
-                         </div>
-                       </div>
                     </div>
 
                 </div>
 
             </section>
 
-            <Footer/>
+            <Footer />
 
         </Fragment>
     )

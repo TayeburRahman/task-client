@@ -2,9 +2,9 @@ import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { toast } from 'react-toastify';
 
-// Custom hook for handling API responses and errors
+
 export function useHandleApiResponse(resError, resData, setError, successMessage) {
-    const { user_data  } = useSelector((state) => state.auth);
+    const { user_data } = useSelector((state) => state.auth);
 
     useEffect(() => {
         if (resError) {
@@ -32,4 +32,4 @@ export function useHandleApiResponse(resError, resData, setError, successMessage
         }
     }, [resError, resData]);
 }
- 
+

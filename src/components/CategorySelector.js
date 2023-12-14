@@ -13,16 +13,16 @@ const CategorySelector = ({ categories, onSelect, defaultSelected, disabled }) =
 
   return (
     <label>
-    Sectors: <br/>
-    <select
-      multiple
-      disabled={disabled}
-      className='select_input'
-      onChange={(e) => onSelect(Array.from(e.target.selectedOptions, (option) => option.value))}
-      value={defaultSelected}
-    > 
-      {categories && categories.map((category) => renderOptions(category))}
-    </select>
+      Sectors: <br />
+      <select
+        multiple
+        disabled={disabled}
+        className='select_input'
+        onChange={(e) => onSelect(Array.from(e.target.selectedOptions, (option) => option.value))}
+        value={defaultSelected}
+      >
+        {categories && categories.map((category) => renderOptions(category))}
+      </select>
     </label>
   );
 };

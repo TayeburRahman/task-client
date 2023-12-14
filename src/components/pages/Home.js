@@ -9,7 +9,7 @@ import { useHandleApiResponse } from '../HandleApiRes';
 import Footer from '../shared/Footer';
 import Header from '../shared/Navbar';
 
-function Home() { 
+function Home() {
     const [name, setName] = useState('');
     const [selectedSectors, setSelectedSectors] = useState([]);
     const [agree, setAgree] = useState(false);
@@ -17,19 +17,17 @@ function Home() {
     const [editData, setEditData] = useState(false);
     const [isError, setError] = useState(false);
 
-    // Redux state
+    // Redux state and  API queries
     const { user_data, form_data } = useSelector((state) => state.auth);
     const localAuth = localStorage?.getItem('auth');
     const { user } = JSON.parse(localAuth);
 
-    // API queries
     const [postFormData, { data: resData, error: resError }] = useLazyPostFormDataQuery();
     useGetUserFormDataQuery(user?.email);
     useGetFormDataQuery();
 
-    console.log(resData)
-     // Handle API response/error
-     useHandleApiResponse(resError, resData, setError)
+    // Handle API response/error
+    useHandleApiResponse(resError, resData, setError)
 
     // Update local state when Redux state changes
     useEffect(() => {
@@ -45,13 +43,13 @@ function Home() {
     // Function to handle form submission
     const handleSave = async () => {
 
-        if (!name || selectedSectors?.length === 0 || !agree) { 
+        if (!name || selectedSectors?.length === 0 || !agree) {
             toast("Please fill in all mandatory fields.", {
                 type: "error",
                 position: toast.POSITION.BOTTOM_RIGHT,
             });
             return;
-        } 
+        }
 
         const dataToSave = {
             name,
@@ -63,21 +61,21 @@ function Home() {
         await postFormData(dataToSave);
     };
 
-    
-        // try {
-        //     const response = await fetch('YOUR_BACKEND_API_URL/save', {
-        //         method: 'POST',
-        //         headers: {
-        //             'Content-Type': 'application/json',
-        //         },
-        //         body: JSON.stringify(dataToSave),
-        //     });
 
-        //     const savedData = await response.json();
-        //     setSavedData(savedData);
-        // } catch (error) {
-        //     console.error('Error saving data:', error);
-        // }
+    // try {
+    //     const response = await fetch('', {
+    //         method: 'POST',
+    //         headers: {
+    //             'Content-Type': 'application/json',
+    //         },
+    //         body: JSON.stringify(dataToSave),
+    //     });
+
+    //     const savedData = await response.json();
+    //     setSavedData(savedData);
+    // } catch (error) {
+    //     console.error('Error saving data:', error);
+    // }
 
 
     return (
@@ -134,9 +132,9 @@ function Home() {
                     />
                     <br />
                     <br />
-                    <label className="label_checkbox"> 
-                        <input className="form-check-input"  id="checkbox-signin" disabled={editData && true} type="checkbox" checked={agree} onChange={() => setAgree(!agree)} /> Agree to terms
-                      
+                    <label className="label_checkbox">
+                        <input className="form-check-input" id="checkbox-signin" disabled={editData && true} type="checkbox" checked={agree} onChange={() => setAgree(!agree)} /> Agree to terms
+
                     </label>
                     <br />
                     <br />
