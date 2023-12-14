@@ -430,7 +430,7 @@
   display: grid;
   align-content: center;
   border-left: 10px solid var(--primary-color);
-  margin-top: 50px;
+  margin-top: 40px;
 }
 .table_contents_ h3 {
   color: #475350;
@@ -471,14 +471,14 @@
   background-color: white;
   box-shadow: 1px 1px 5px 0 rgba(1, 1, 1, 0.05);
   border-radius: 10px;
-  margin-top: 50px;
+  margin-top: 40px;
   padding-top: 40px;
   padding-bottom: 25px;
 }
 
 .content_ {
   padding: 30px;
-  margin-top: 50px;
+  margin-top: 40px;
   background: white;
   text-align: left;
   font-weight: 500;
@@ -737,7 +737,7 @@
 
   .content_ {
     padding: 15px;
-    margin-top: 50px;
+    margin-top: 40px;
     background: white;
     text-align: left;
     font-weight: 500;
@@ -750,7 +750,7 @@
   }
 
   .profile_ {
-    margin-top: 50px;
+    margin-top: 40px;
   }
 
   .image__content {
