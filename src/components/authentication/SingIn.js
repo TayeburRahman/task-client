@@ -18,12 +18,18 @@ const SignIn = () => {
     formState: { errors },
   } = useForm();
 
-  const [loginUser, { data: userData, error: responseError }] =
+  const [loginUser, { data: userData, error: resError }] =
     useLoginUserMutation();
 
+    console.log("resError", resError)
+
   useEffect(() => {
-    if (responseError?.data?.status === "error") {
-      setError(responseError?.data?.message);
+    if (resError) {
+       toast(resError?.data?.message, {
+        type:"error",
+        position: toast.POSITION.BOTTOM_RIGHT,
+      });
+      return;
     }
 
     if (userData?.status === "success") {
@@ -33,7 +39,7 @@ const SignIn = () => {
       });
       navigate("/");
     }
-  }, [navigate, responseError, userData, error]);
+  }, [ resError, userData]);
 
   const onSubmit = async (data) => {
     await loginUser(data);
