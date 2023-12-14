@@ -1,5 +1,9 @@
 /* -----------auth--------------- */
-
+.account-pages {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+}
 .auth_ h4 {
   color: var(--primary-color-dark);
 }
