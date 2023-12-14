@@ -57,29 +57,28 @@ const SignIn = () => {
                 >
                   <Link to="/" style={{ textDecoration: "none" }}>
                     <span>
-                      <h4>Trash Talk</h4>
+                      <h4 className="logo">Tasks</h4>
                     </span>
                   </Link>
                 </div>
 
-                <div className="card-body p-4">
-                  <div className="text-center w-75 m-auto">
+                <div className="card-body p-4 auth_">
+                  <div className="text-center m-auto">
                     <h4 className="text-dark-50 text-center p-0 m-0 fw-bold">
                       Sign In
                     </h4>
                     <p className="p-1">
-                      Enter your email address and password to access admin
-                      panel.
+                      Enter your email address and password!
                     </p>
                   </div>
 
                   <form onSubmit={handleSubmit(onSubmit)}>
-                    <div className="mb-3 text-left">
-                      <label htmlFor="email-address" className="form-label">
+                    <div className="mb-3 text-start">
+                      <label htmlFor="email-address" className="form-label input_name">
                         Email address
                       </label>
                       <input
-                        className="form-control"
+                        className="form-control input_auth"
                         type="email"
                         id="email-address"
                         placeholder="Enter your email"
@@ -98,18 +97,18 @@ const SignIn = () => {
                       )}
                     </div>
 
-                    <div className="mb-2 text-left">
+                    <div className="mb-2 text-start">
                       <Link to="/password/forgot" className="text-muted float-end">
                         <small>Forgot your password?</small>
                       </Link>
-                      <label htmlFor="password" className="form-label text-left">
+                      <label htmlFor="password" className="form-label text-start input_name">
                         Password
                       </label>
                       <div className="input-group input-group-merge">
                         <input
                           type={passwordStatus ? "text" : "password"}
                           id="password"
-                          className="form-control"
+                          className="form-control input_auth"
                           placeholder="Enter your password"
                           {...register("password", {
                             required: "Password is required",
@@ -117,7 +116,7 @@ const SignIn = () => {
                           })}
                         />
                         <div className="input-group-text p-0">
-                          <button onClick={handelOnPassword}>
+                          <button type="button" className="button_password" onClick={handelOnPassword}>
                             <span className="password-eye">
                               {passwordStatus ? (
                                 <VisibilityOffIcon className="OnPassword" />
@@ -136,7 +135,7 @@ const SignIn = () => {
                     </div>
 
                     <div className="mb-2">
-                      <div className="form-check text-left">
+                      <div className="form-check text-start">
                         <input
                           type="checkbox"
                           className="form-check-input"
@@ -145,7 +144,7 @@ const SignIn = () => {
                           onChange={() => setRememberMe(!rememberMe)}
                         />
                         <label
-                          className="text-muted form-check-label"
+                          className="text-muted form-check-label stay_"
                           htmlFor="checkbox-signin"
                         >
                           Stay signed in
@@ -155,7 +154,7 @@ const SignIn = () => {
 
                     <div className=" mb-0 text-center">
                       <button
-                        className="btn btn-primary"
+                        className="auth_button"
                         type="submit"
                         style={{
                           background: "#1560FF",
@@ -170,7 +169,7 @@ const SignIn = () => {
 
               <div className="row mt-3">
                 <div className="col-12 text-center">
-                  <p className="text-muted">
+                  <p className="text-muted stay_">
                     Don't have an account?{" "}
                     <Link to="/signUp" className="text-muted ms-1">
                       <b>Sign Up</b>

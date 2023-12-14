@@ -1,5 +1,6 @@
 import { apiSlice } from "../apiSlice";
 import {
+  setFormData,
   setUserData
 } from "./authSlice";
 
@@ -38,6 +39,21 @@ export const authApi = apiSlice.injectEndpoints({
         body: data,
       }),
     }),
+
+    getFormData: builder.query({
+      query: () => ({
+        url: "api/v1/data/input",
+        method: "GET",
+      }),
+      async onQueryStarted(query, { queryFulfilled, dispatch }) {
+        try {
+          const result = await queryFulfilled; 
+          dispatch(setFormData(result.data));
+        } catch (error) {
+          console.log("redux store error", error);
+        }
+      },
+    }), 
  
     postFormData: builder.query({
       query: (data) => ({
@@ -78,4 +94,6 @@ export const {
   useRegistrationMutation,
   useLazyPostFormDataQuery,  
   useGetUserFormDataQuery, 
+  useGetFormDataQuery,  
+   
 } = authApi;

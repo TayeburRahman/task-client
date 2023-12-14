@@ -6,7 +6,7 @@ const initialState = {
   user: undefined,
   id: undefined,
   user_data: undefined,
-  from_all_data: undefined,
+  form_data: undefined,
 };
 
 // Create a slice of the Redux store for authentication
@@ -25,10 +25,12 @@ const authSlice = createSlice({
       state.user = undefined;
       state.id = undefined;
       state.user_data = null;
-    }, 
-
+    },  
     setUserData: (state, action) => {
       state.user_data = action.payload;
+    },
+    setFormData: (state, action) => {
+      state.form_data = action.payload;
     },
     
   },
@@ -38,6 +40,7 @@ export const {
   userLoggedIn,
   userLoggedOut,
   setUserData,
+  setFormData,
 } = authSlice.actions;
  
 export default authSlice.reducer;

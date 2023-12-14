@@ -130,7 +130,7 @@ function Blog() {
                         </div>
 
                     </div>
-                    <div className='col-sm-12 col-md-4 col-lg-3 text-left  '>
+                    <div className='col-sm-12 col-md-4 col-lg-3 text-start  '>
                        <div className='col-fixed'>
                        <div className='profile_ '>
                            <img className='profile_img' src={profile} />

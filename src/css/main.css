@@ -1,11 +1,75 @@
-.text-center {
-  text-align: center !important;
+/* -----------auth--------------- */
+
+.auth_ h4 {
+  color: var(--primary-color-dark);
 }
-.text-right {
-  text-align: right !important;
+
+.auth_ p {
+  font-weight: 500;
+  color: #525e5b;
 }
-.text-left {
-  text-align: left !important;
+.button_password {
+  border: none;
+  width: 50px;
+}
+.auth_button {
+  border: none;
+  color: white;
+  padding: 8px;
+  padding-right: 20px;
+  padding-left: 20px;
+  border-radius: 3px;
+  box-shadow: 1px 1px 5px 0 rgba(1, 1, 1, 0.05);
+  background: var(--primary-color) !important;
+  transition: all 250ms;
+}
+
+.auth_button:hover {
+  box-shadow: rgba(0, 0, 0, 0.092) 0 4px 12px;
+  background-color: rgb(123, 153, 14) !important;
+}
+
+#on_button {
+  background-color: rgb(159, 181, 80) !important;
+}
+
+.button_password svg {
+  color: rgb(142, 149, 120);
+}
+
+.input_name {
+  color: #5a6750;
+  font-weight: 500;
+  font-size: 18px;
+}
+.input_auth {
+  outline: none !important;
+}
+
+.input_auth:focus {
+  outline: none !important;
+  outline: 0;
+  box-shadow: none;
+  border-color: var(--primary-color) !important;
+}
+
+#checkbox-signin:checked {
+  background-color: var(--primary-color) !important;
+  border-color: var(--primary-color) !important;
+}
+
+#checkbox-signin:focus {
+  outline: none !important;
+  outline: 0;
+  -webkit-appearance: none;
+  box-shadow: none;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  border-color: var(--primary-color) !important;
+}
+.stay_ {
+  font-weight: 500;
+  color: #626e6b;
 }
 
 /* -------NavBar----------- */
@@ -26,7 +90,9 @@
   font-weight: 700;
   color: var(--primary-color) !important;
   font-size: 30px;
+  text-transform: uppercase;
 }
+
 .nav_link {
   text-decoration: none;
   color: var(--white) !important;
@@ -44,7 +110,6 @@
   left: 0;
   width: 0;
   height: 2px;
-
   transition: width 0.3s ease;
   background: var(--primary-color);
 }
@@ -87,6 +152,13 @@
 .logout_button:hover {
   transform: translateY(-1px);
   box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+}
+.navbar-light .navbar-toggler {
+  color: rgba(0, 0, 0, 0.55);
+  border-color: rgba(0, 0, 0, 0.1);
+  height: 35px;
+  width: 55px;
+  padding: 0 !important;
 }
 
 /*.........banner............  */
@@ -203,9 +275,6 @@
 .image__content li {
   margin-bottom: 0.5rem;
 }
-.text_left {
-  text-align: left !important;
-}
 
 /* ----------form------------ */
 .handler {
@@ -252,6 +321,10 @@
   font-size: 16px;
 }
 
+.form_name_input:focus {
+  border-color: var(--primary-color) !important;
+}
+
 .select_input {
   width: 100%;
   max-width: 500px;
@@ -260,6 +333,10 @@
   border: 1px solid var(--primary-color-dark);
   box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.044);
   height: 200px;
+}
+
+.select_input:focus {
+  border-color: var(--primary-color) !important;
 }
 
 .select_input option {
@@ -286,50 +363,6 @@
   width: 120px !important;
 }
 
-.checkbox_ input {
-  position: absolute;
-  cursor: pointer;
-  height: 0;
-  width: 0;
-}
-
-.checkmark {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 18px;
-  width: 18px;
-  background-color: #ffffff;
-  border: 1px solid var(--primary-color-dark);
-}
-
-.checkbox_ input:checked ~ .checkmark {
-  background-color: var(--primary-color) !important;
-  border: 1px solid rgba(0, 0, 0, 0.207);
-}
-
-.checkmark:after {
-  content: "";
-  position: absolute;
-  display: none;
-}
-
-.checkbox_ input:checked ~ .checkmark:after {
-  display: block;
-}
-
-.checkbox_ .checkmark:after {
-  left: 5px;
-  top: 2px;
-  width: 5px;
-  height: 10px;
-  border: solid white;
-  border-width: 0 3px 3px 0;
-  -webkit-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  transform: rotate(45deg);
-}
-
 .save_button {
   width: fit-content;
   padding: 0.6rem 5rem;
@@ -340,8 +373,10 @@
   border: none;
   transition: 0.3s;
   border: 1px solid rgba(214, 214, 214, 0.207);
-
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.018);
+}
+.label_checkbox {
+  font-size: 16px !important;
 }
 
 .save_button:hover {
@@ -590,11 +625,30 @@
   position: sticky;
   top: 20px;
 }
-@media (width < 900px) {
+
+@media only screen and (max-width: 1280px) {
   .container_ {
     max-width: 90% !important;
     margin: auto !important;
   }
+}
+
+@media (width < 925px) {
+  .logout_button {
+    width: 100% !important;
+    max-width: 300px !important;
+  }
+  .nav_login {
+    margin-top: 25px;
+    margin-bottom: 20px;
+    align-items: flex-start;
+  }
+  .nav_link {
+    font-weight: 500;
+    text-align: left;
+    margin-top: 5px;
+  }
+
   .link a:not(.nav__btn) {
     display: none;
   }
@@ -633,9 +687,22 @@
     background: white;
     padding: 15px;
   }
+  .logout_button {
+    width: 100% !important;
+    max-width: 200px !important;
+  }
 }
 
 @media only screen and (max-width: 600px) {
+  .content__container h1 {
+    font-size: 41px;
+    font-weight: 400;
+    line-height: 3rem;
+  }
+  .logout_button {
+    width: 100% !important;
+    max-width: 300px !important;
+  }
   .list_publisher li {
     margin-left: 10px;
   }
@@ -669,5 +736,9 @@
 
   .profile_ {
     margin-top: 50px;
+  }
+
+  .image__content {
+    left: 45%;
   }
 }

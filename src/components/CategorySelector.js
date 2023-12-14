@@ -21,7 +21,7 @@ const CategorySelector = ({ categories, onSelect, defaultSelected, disabled }) =
       onChange={(e) => onSelect(Array.from(e.target.selectedOptions, (option) => option.value))}
       value={defaultSelected}
     > 
-      {categories.map((category) => renderOptions(category))}
+      {categories && categories.map((category) => renderOptions(category))}
     </select>
     </label>
   );

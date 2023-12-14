@@ -75,13 +75,13 @@ const SignUp = () => {
                 >
                   <Link to="/" style={{ textDecoration: "none" }}>
                     <span> 
-                      <h4>Trash Talk</h4>
+                    <h4 className="logo">Tasks</h4>
                     </span>
                   </Link>
                 </div>
 
-                <div className="card-body ">
-                  <div className="text-center w-85     m-auto">
+                <div className="card-body auth_">
+                  <div className="text-center w-85 m-auto">
                     <h4 className="text-dark-50 text-center mt-0 fw-bold">
                       Sign Up
                     </h4>
@@ -91,12 +91,12 @@ const SignUp = () => {
                   </div>
 
                   <form onSubmit={handleSubmit(onSubmit)}>
-                    <div className="mb-2 text-left">
-                      <label htmlFor="displayName" className="form-label m-0">
+                    <div className="mb-2 text-start">
+                      <label htmlFor="displayName" className="form-label m-0 input_name">
                         Full Name
                       </label>
                       <input
-                        className="form-control"
+                        className="form-control input_auth"
                         type="text"
                         id="displayName"
                         placeholder="Enter your name"
@@ -106,12 +106,12 @@ const SignUp = () => {
                       />
                     </div>
 
-                    <div className="mb-2 text-left">
-                      <label htmlFor="email" className="form-label m-0">
+                    <div className="mb-2 text-start">
+                      <label htmlFor="email" className="form-label m-0 input_name">
                         Email address
                       </label>
                       <input
-                        className="form-control"
+                        className="form-control input_auth"
                         type="email"
                         id="email"
                         placeholder="Enter your email"
@@ -121,10 +121,10 @@ const SignUp = () => {
                       />
                     </div>
 
-                    <div className="mb-2 text-left">
+                    <div className="mb-2 text-start input_name">
                       <label
                         htmlFor="password"
-                        className="form-label text-left m-0"
+                        className="form-label text-start m-0"
                       >
                         Password
                       </label>
@@ -132,14 +132,14 @@ const SignUp = () => {
                         <input
                           type={passwordStatus ? "text" : "password"}
                           id="password"
-                          className="form-control"
+                          className="form-control input_auth"
                           placeholder="Enter your password"
                           {...register("password", {
                             required: "Password is required",
                           })}
                         />
                         <div className="input-group-text p-0">
-                          <button onClick={handelOnPassword}>
+                          <button onClick={handelOnPassword} type="button" className="button_password">
                             <span className="password-eye">
                               {passwordStatus ? (
                                 <VisibilityOffIcon className="OnPassword" />
@@ -151,10 +151,10 @@ const SignUp = () => {
                         </div>
                       </div>
                     </div>
-                    <div className="mb-2 text-left">
+                    <div className="mb-2 text-start">
                       <label
                         htmlFor="confirmPassword"
-                        className="form-label text-left m-0"
+                        className="form-label text-start m-0 input_name"
                       >
                         Re Password
                       </label>
@@ -162,14 +162,14 @@ const SignUp = () => {
                         <input
                           type={rePasswordStatus ? "text" : "password"}
                           id="confirmPassword"
-                          className="form-control"
+                          className="form-control input_auth"
                           placeholder="Enter Re password"
                           {...register("confirmPassword", {
                             required: "Password is required",
                           })}
                         />
                         <div className="input-group-text p-0">
-                          <button onClick={handelOnRePassword}>
+                          <button onClick={handelOnRePassword} type="button" className="button_password">
                             <span className="password-eye">
                               {rePasswordStatus ? (
                                 <VisibilityOffIcon className="OnPassword" />
@@ -183,15 +183,15 @@ const SignUp = () => {
                     </div>
 
                     <div className="mb-2">
-                      <div className="form-check text-left">
+                      <div className="form-check text-start">
                         <input
                           type="checkbox"
                           className="form-check-input"
-                          id="checkbox-signup"
+                          id="checkbox-signin"
                           onClick={handelCheckBox}
                         />
                         <label
-                          className="form-check-label"
+                          className="form-check-label stay_"
                           htmlFor="checkbox-signup"
                         >
                           I accept{" "}
@@ -204,8 +204,9 @@ const SignUp = () => {
 
                     <div className="mb-22 text-center">
                       <button
-                        className="btn btn-primary"
+                        className="auth_button"
                         type="submit"
+                        id={!isCheckBox && "on_button"}
                         disabled={isCheckBox === true ? false : true}
                         style={{
                           background: "#1560FF",
@@ -220,7 +221,7 @@ const SignUp = () => {
 
               <div className="row mt-0">
                 <div className="col-12 text-center">
-                  <p className="text-muted m-1">
+                  <p className="text-muted m-1 stay_">
                     Already have account?{" "}
                     <Link to="/login" className="text-muted ms-1">
                       <b>Log In</b>
