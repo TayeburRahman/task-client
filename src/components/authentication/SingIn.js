@@ -111,9 +111,7 @@ const SignIn = () => {
                           className="form-control input_auth"
                           placeholder="Enter your password"
                           {...register("password", {
-                            required: "Password is required",
-                            minLength: 6,
-                          })}
+                            required: "Password is required"})}
                         />
                         <div className="input-group-text p-0">
                           <button type="button" className="button_password" onClick={handelOnPassword}>
