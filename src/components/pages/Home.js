@@ -27,6 +27,7 @@ function Home() {
     useGetUserFormDataQuery(user?.email);
     useGetFormDataQuery();
 
+    console.log(resData)
      // Handle API response/error
      useHandleApiResponse(resError, resData, setError)
 
