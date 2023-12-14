@@ -457,6 +457,7 @@
   margin-bottom: 10px;
   display: flex;
   align-items: center;
+  padding-right: 5px;
 }
 
 .oi_list ol li:before {

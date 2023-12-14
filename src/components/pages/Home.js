@@ -92,7 +92,7 @@ function Home() {
                         Building websites with JavaScript React provides developers with a powerful and efficient toolkit for creating modern and responsive user interfaces. React's component-based architecture encourages modular development, fostering code reuse and maintainability.
                     </p>
                     <form>
-                        <input type="text" placeholder="What do you want to learn" />
+                        <input type="text" placeholder="What do you want to search" />
                         <button type="submit">Search Now</button>
                     </form>
                 </div>

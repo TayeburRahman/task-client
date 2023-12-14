@@ -76,7 +76,7 @@ function Blog() {
                         </div>
 
                         <div className='content_'>
-                            <div className='mb-4'>
+                            <div className='mb-4 mt-4'>
                                 <Link to="/" className='title_link'>
                                     Dona curvo sub evertere quam ultimus aridus <LinkIcon className='link_icon' />
                                 </Link>
