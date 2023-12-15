@@ -3,6 +3,7 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { userLoggedOut } from '../../features/auth/authSlice';
 
 function Header() {
   const navigate = useNavigate();
@@ -12,6 +13,7 @@ function Header() {
 
   const logout = () => {
     localStorage.clear();
+    userLoggedOut()
     navigate("/login");
   };
 
