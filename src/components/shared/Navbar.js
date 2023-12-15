@@ -13,7 +13,7 @@ function Header() {
 
   const logout = () => {
     localStorage.clear();
-    userLoggedOut(false)
+    userLoggedOut()
     navigate("/login");
   };
 
