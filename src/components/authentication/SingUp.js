@@ -39,11 +39,7 @@ const SignUp = () => {
     () => {
       if (userData?.status === "error") {
         setError(userData?.message);
-      }
-
-      if (responseError?.data?.message?.errors?.password?.message) {
-        setError(responseError?.data?.message?.errors?.password?.message);
-      }
+      } 
 
       if (userData?.status === "success") {
         toast(userData?.message, {

@@ -12,16 +12,16 @@ import Header from '../shared/Navbar';
 function Home() {
     const [name, setName] = useState('');
     const [selectedSectors, setSelectedSectors] = useState([]);
-    const [agree, setAgree] = useState(false);
-    const [categories, setCategories] = useState([]);
+    const [agree, setAgree] = useState(false); 
     const [editData, setEditData] = useState(false);
     const [isError, setError] = useState(false);
 
-    // Redux state and  API queries
+    // Redux state  
     const { user_data, form_data } = useSelector((state) => state.auth);
     const localAuth = localStorage?.getItem('auth');
     const { user } = JSON.parse(localAuth);
 
+    // API queries
     const [postFormData, { data: resData, error: resError }] = useLazyPostFormDataQuery();
     useGetUserFormDataQuery(user?.email);
     useGetFormDataQuery();
@@ -30,15 +30,14 @@ function Home() {
     useHandleApiResponse(resError, resData, setError)
 
     // Update local state when Redux state changes
-    useEffect(() => {
-        setCategories(form_data);
+    useEffect(() => { 
         if (user_data) {
             setSelectedSectors(user_data.sectors);
             setName(user_data.name);
             setAgree(user_data.agree);
             setEditData(true);
-        }
-    }, [user_data, form_data]);
+        } 
+    }, [user_data]);
 
     // Function to handle form submission
     const handleSave = async () => {
@@ -126,7 +125,7 @@ function Home() {
 
                     <CategorySelector
                         disabled={editData}
-                        categories={categories}
+                        categories={form_data}
                         onSelect={setSelectedSectors}
                         defaultSelected={selectedSectors}
                     />
